@@ -55,6 +55,7 @@ function Game() {
   const handleRetryClick = () => {
     setLevel(1);
     setScore(0);
+    setScoreGoal(firstCardNumb - 2 + 1 * 2);
     setPlayerInput([]);
     setGameOver(false);
   };
