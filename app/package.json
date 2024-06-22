@@ -1,9 +1,9 @@
 {
+  "homepage": "https://leovtr76.github.io/MemoryGame",
   "name": "app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://leovtr76.github.io/MemoryGame/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
