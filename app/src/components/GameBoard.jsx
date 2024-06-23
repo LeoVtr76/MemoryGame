@@ -5,15 +5,13 @@ function GameBoard({ cards, onCardClick }) {
     <div className="container">
       {cards.length > 0 ? (
         <>
-          {cards
-            .sort(() => Math.random() - Math.random())
-            .map((card, index) => (
-              <Card
-                key={index}
-                card={card}
-                onCardClick={() => onCardClick(card.id)}
-              />
-            ))}
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              card={card}
+              onCardClick={() => onCardClick(card.id)}
+            />
+          ))}
         </>
       ) : (
         <p>Loading...</p>
