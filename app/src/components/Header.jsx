@@ -1,9 +1,10 @@
 import Proptypes from "prop-types";
+import logo from "../assets/logo.png";
 function Header({ score, bestScore }) {
   return (
     <div className="header">
       <div className="title">
-        <h1>Memory Game</h1>
+        <img src={logo} alt="" draggable="false" />
       </div>
       <div className="score">
         <div className="player-score">

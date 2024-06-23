@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 function Card({ card, onCardClick }) {
   return (
     <div className="card" onClick={() => onCardClick(card.id)}>
-      <img src={card.image} alt="character image" />
+      <img src={card.image} alt="character image" draggable="false" />
       <span>{card.name}</span>
     </div>
   );

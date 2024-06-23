@@ -1,5 +1,5 @@
 body {
-  background-color: #160124;
+  background-color: white;
   height: 100%;
   width: 100%;
   display: flex;
@@ -14,10 +14,13 @@ body {
 }
 .header {
   height: 30%;
-  background-color: rgb(110, 66, 151);
-  box-shadow: #2d054a 1px -2px 10px 10px;
+  background-color: #16acc9;
+  box-shadow: #d2da4d 1px -2px 10px 6px;
   display: flex;
   flex-direction: column;
+}
+.header img {
+  width: 400px;
 }
 .data {
   display: flex;
@@ -27,10 +30,11 @@ body {
 .score {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   padding-right: 50px;
   width: 100%;
   box-sizing: border-box;
+  padding-bottom: 10px;
 }
 .title {
   text-align: center;
@@ -52,17 +56,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(110, 66, 151);
+  background-color: #16acc9;
+  border: 3px solid #d2da4d;
   padding: 10px;
   border-radius: 20px;
   width: 250px;
-  height: 250px;
-  /* box-shadow: #2d054a 1px -2px 10px 10px; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 280px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .card:hover {
   transform: scale(1.05);
-  box-shadow: #2d054a 1px -2px 10px 10px;
+  box-shadow: #d2da4d 1px -2px 10px 3px;
   z-index: 10;
 }
 .card img {
@@ -80,19 +84,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #222;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 80px;
+  background-color: #16acc9;
+  box-shadow: #d2da4d 1px -2px 10px 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   color: #fff;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  z-index: 1000; /* Assurez-vous que la pop-up est au-dessus de tout le reste */
-
-  /* Animation pour faire apparaître la pop-up */
+  z-index: 1000;
   animation: fadeIn 0.3s ease-out;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -103,15 +108,17 @@ body {
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
-.gameOver {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 80px;
-  background-color: #4f0783;
-  box-shadow: #2d054a 1px -2px 10px 10px;
+.barrer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 500;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
 }
+
 .gameOver span {
   font-size: 24px;
   font-weight: bold;
@@ -119,8 +126,8 @@ body {
 }
 
 .gameOver button {
-  background-color: #2d054a;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #d2da4d;
   border: none;
   padding: 10px 20px;
   font-size: 18px;
@@ -130,8 +137,9 @@ body {
 }
 
 .gameOver button:hover {
-  background-color: #4f0783;
+  background-color: #d2da4d;
+  color: #16acc9;
   transform: scale(1.05);
-  box-shadow: #2d054a 1px -2px 10px 10px;
+  box-shadow: #d2da4d 1px -2px 10px 2px;
   z-index: 10;
 }

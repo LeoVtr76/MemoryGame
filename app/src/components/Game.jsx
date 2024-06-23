@@ -1,6 +1,7 @@
 import GameBoard from "./GameBoard";
 import Header from "./Header";
 import GameOver from "./GameOver";
+
 import { useState, useEffect } from "react";
 
 function Game() {
@@ -34,7 +35,6 @@ function Game() {
     fetchCards();
   }, [level]);
   const handleCardClick = (cardId) => {
-    console.log(playerInput);
     if (playerInput.indexOf(cardId) > -1) {
       if (bestScore < score) {
         setBestScore(score);
@@ -61,14 +61,16 @@ function Game() {
   };
   return (
     <>
-      {gameOver ? (
-        <GameOver onRetryClick={handleRetryClick} />
-      ) : (
+      {gameOver && (
         <>
-          <Header score={score} bestScore={bestScore} />
-          <GameBoard cards={cards} onCardClick={handleCardClick} />
+          <div className="barrer"></div>
+          <GameOver onRetryClick={handleRetryClick} />
         </>
       )}
+      <>
+        <Header score={score} bestScore={bestScore} />
+        <GameBoard cards={cards} onCardClick={handleCardClick} />
+      </>
     </>
   );
 }
